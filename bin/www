@@ -1,0 +1,22 @@
+import Hapi from 'hapi';
+import App from '../src/App';
+
+const server = new Hapi.Server({
+  host: 'localhost',
+  port: process.env.PORT,
+  routes: {
+    cors: {
+      origin: [ '*' ],
+      headers: [
+        'Authorization',
+        'Content-Type',
+        'If-None-Match',
+        'Access-Control-Request-Method',
+        'Access-Control-Allow-Credentials',
+      ],
+      credentials: true,
+    },
+  },
+});
+const app = new App(server);
+app.start();
