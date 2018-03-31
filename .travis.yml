@@ -1,6 +1,12 @@
 language: node_js
 node_js:
  - "node"
+services:
+  - postgresql
+before_script:
+  - cp config/database.example.json config/database.json
+  - psql -c 'create database api_test;' -U postgres
+  - npm run migrate
 after_success:
   - npm run coverage
   - cat ./coverage/lcov.info | coveralls
