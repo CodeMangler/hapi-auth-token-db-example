@@ -1,5 +1,8 @@
 # hapi-auth-token Database Authentication Example
 
+[![Build Status](https://travis-ci.org/CodeMangler/hapi-auth-token-db-example.svg?branch=master)](https://travis-ci.org/CodeMangler/hapi-auth-token-db-example)
+[![Coverage Status](https://coveralls.io/repos/github/CodeMangler/hapi-auth-token-db-example/badge.svg?branch=master)](https://coveralls.io/github/CodeMangler/hapi-auth-token-db-example?branch=master)
+
 This is an example Hapi application to demonstrate usage of the [hapi-auth-token](https://github.com/CodeMangler/hapi-auth-token) plugin with users from a SQL database.
 It uses `sequelize` to connect to an RDBMS, which is assumed to be Postgre by default.
 But you can obviously connect to any other database by installing the appropriate database adapters, and updating `config/database.json` to point to that DB.
