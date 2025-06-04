@@ -4,9 +4,9 @@ import Blipp from 'blipp';
 import fs from 'fs';
 import HapiAuthToken from 'hapi-auth-token';
 import HapiSwagger from 'hapi-swagger';
-import Inert from 'inert';
+import Inert from '@hapi/inert';
 import path from 'path';
-import Vision from 'vision';
+import Vision from '@hapi/vision';
 import models from './models';
 
 export default class App {

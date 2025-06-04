@@ -17,10 +17,10 @@ export default class AuthenticationController {
       handler: this._create,
       config: {
         validate: {
-          payload: {
+          payload: Joi.object({
             username: Joi.string().required(),
             password: Joi.string().min(2).max(200).required(),
-          },
+          }),
         },
         auth: false,
         tags: ['api'],
@@ -34,9 +34,9 @@ export default class AuthenticationController {
       handler: this._delete,
       config: {
         validate: {
-          query: {
+          query: Joi.object({
             token: Joi.string(),
-          },
+          }),
           headers: Joi.object({
             Authorization: Joi.string(),
           }).unknown(),

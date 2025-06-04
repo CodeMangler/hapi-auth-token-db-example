@@ -1,7 +1,7 @@
-import Hapi from 'hapi';
+const Hapi = require('@hapi/hapi');
 import App from '../src/App';
 
-const server = new Hapi.Server({
+const server = Hapi.server({
   host: 'localhost',
   port: process.env.PORT,
   routes: {

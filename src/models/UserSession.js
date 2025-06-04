@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     return UserSession.create({ userId, sessionToken: newSessionToken });
   };
 
-  UserSession.byToken = token => UserSession.find({ where: { sessionToken: token } });
+  UserSession.byToken = token => UserSession.findOne({ where: { sessionToken: token } });
 
   UserSession.clearFor = userId => UserSession.destroy({ where: { userId } });
   return UserSession;

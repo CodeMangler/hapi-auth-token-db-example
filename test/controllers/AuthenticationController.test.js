@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import { expect } from 'chai';
-import Hapi from 'hapi';
+const Hapi = require('@hapi/hapi');
 import App from '../../src/App';
 import models from '../../src/models/index';
 
@@ -9,7 +9,7 @@ describe('AuthenticationController', () => {
   let user = null;
 
   beforeEach(async () => {
-    server = new Hapi.Server();
+    server = Hapi.server();
     await new App(server).configure();
     const hashedPassword = await bcrypt.hash('aPassword', 10);
     user = await models.User.create({ username: 'aUser', passwordHash: hashedPassword });

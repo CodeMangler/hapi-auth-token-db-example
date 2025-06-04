@@ -26,9 +26,9 @@ export default class ExampleAuthenticatedController {
       handler: this._protectedEndpoint,
       config: {
         validate: {
-          query: {
+          query: Joi.object({
             token: Joi.string(),
-          },
+          }),
           headers: Joi.object({
             Authorization: Joi.string(),
           }).unknown(),
