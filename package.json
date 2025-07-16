@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Example Hapi application demonstrating usage of hapi-auth-token plugin for authentication with DB users",
   "scripts": {
-    "test": "NODE_ENV=test mocha --exit --require babel-core/register --require babel-polyfill test/**/*.test.js",
+    "test": "NODE_ENV=test bash -c 'yarn sequelize db:migrate && yarn mocha --exit --require babel-core/register --require babel-polyfill test/**/*.test.js'",
     "coverage": "nyc --reporter=text --reporter=lcov yarn test",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
@@ -43,6 +43,7 @@
     "nyc": "^15.1.0",
     "sequelize-cli": "^6.6.1",
     "sinon": "^15.2.0",
-    "sinon-chai": "^3.7.0"
+    "sinon-chai": "^3.7.0",
+    "sqlite3": "^5.1.7"
   }
 }
