@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 
-import Boom from 'boom';
+import Boom from '@hapi/boom';
 import Joi from 'joi';
 import models from '../models/index';
 
